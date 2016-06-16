@@ -7,7 +7,7 @@ val hdfsServer = System.getProperty("hdfs.path")
 val hdfsPrefix = s"$hdfsServer/BIDMach_MNIST/parts"
 println(s"Loading mnist data from $hdfsPrefix ..")
 
-val fnames = (0 to 80).map(i => (f"$hdfsPrefix/alls$i%02.0f.fmat.lz4")).toList
+val fnames = (0 to 1).map(i => (f"$hdfsPrefix/alls$i%02.0f.fmat.lz4")).toList
 
 val hdfsio = new HDFSIO
 hdfsio.appendFiles(fnames, hdfsPrefix + "merged.fmat.lz4", 2);
